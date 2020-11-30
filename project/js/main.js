@@ -20,7 +20,6 @@ var url = "https://api.openweathermap.org/data/2.5/weather?q="+searchQuery+"&uni
   $(".temp").text("")
 
   $.ajax(url,{success: function(data){
-    console.log(data);
     $(".city").text(data.name);
     $(".temp").text(data.main.temp);
   }, error: function(error){
