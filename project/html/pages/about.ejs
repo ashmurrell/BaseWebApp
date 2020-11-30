@@ -9,18 +9,21 @@
   <!-- Check out more components here: http://getbootstrap.com/components/ -->
   <div class="page-header">
     <% include ../helpers/navbar %>
-    <h1>Welcome to my WebApp</h1>
+    <h1>Contact Submission Form</h1>
   </div>
 
-  <p id="demo">
-    Press below for a taco.
-  </p>
-
-  <button class="btn btn-default" type="button" onclick="myFunction()">
-    Try it
-  </button>
-
-  <div id="doge-image"/>
+  <form onSubmit="handleMessageFormSubmit()" action="#">
+    First Name <br>
+    <input id="first-name">
+    Last Name <br>
+    <input id="last-name">
+    Email <br>
+    <input id="email">
+    Notes <br>
+    <textarea id ="Notes"></textarea>
+    <br>
+    <button>Submit Contact</button>
+</form>
 
 </body>
 
