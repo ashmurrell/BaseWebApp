@@ -13,7 +13,7 @@ $(document).ready(function(){
 getWeather();
 })
 
-function getWeather() {
+function getWeather(searchQuery) {
 var url = "https://api.openweathermap.org/data/2.5/weather?q="+searchQuery+"&units=metric&appid="+apiKey;
 
   $.ajax(url,{success: function(data){
@@ -24,7 +24,7 @@ var url = "https://api.openweathermap.org/data/2.5/weather?q="+searchQuery+"&uni
 }
 
 function searchWeather() {
-  var searchQuery=$(".search").val();
+  var searchQuery= $(".search").val();
   getWeather(searchQuery);
 }
 
