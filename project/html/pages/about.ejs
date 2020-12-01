@@ -12,17 +12,22 @@
     <h1>Contact Submission Form</h1>
   </div>
 
-  <form onSubmit= "submitContact()" action="#" name="contactform">
-    First Name
+ 
+  <form class= onSubmit= "submitContact()" action="#" name="contactform">
+    <div class="form-group">
+    <label for= "first-name">First Name </label>
     <br><input type="text" id="first-name" required><br>
-    Last Name
+    <label for= "last-name"> Last Name </label>
     <br><input type="text" id="last-name" required><br>
-    Email
-    <br><input type="text" id="email" required><br>
-
-    <br><button>Submit Contact</button><br>
-
+    <label for= "email"> Email</label>
+    <br><input type="email" id="email" required><br>
+    </div>
+    <div class ="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="data-consent" required>
+    <label class="form-check-label" for="data-consent">I agree to share my data with Able marketing</label>
+    <br><button type "submit" class= "btn btn-primary">Submit</button>
 </form>
+
 
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/8915946.js"></script>
