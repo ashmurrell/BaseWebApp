@@ -1,6 +1,8 @@
-var firstName = "Jeremy"
-var lastName = "Tester"
-var email = "ash.e.murrell@gmail.com"
+var contactData {
+firstName = "Jeremy",
+lastName = "Tester",
+email = "ash.e.murrell@gmail.com"}
+
 
 //function handleFormSubmit(){
   //var firstName = $("#first-name").val();

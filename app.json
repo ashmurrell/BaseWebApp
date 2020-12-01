@@ -1,6 +1,6 @@
 {
-  "name": "Build Your First Webapp",
-  "description": "A barebones Node.js app using Express 4",
+  "name": "An example of a custom Hubspot form and embedded hubspot form",
+  "description": "A basic node.js app",
   "repository": "",
   "logo": "",
   "keywords": ["node", "express", "static"],

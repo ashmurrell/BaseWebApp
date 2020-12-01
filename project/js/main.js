@@ -8,7 +8,6 @@
 
 function submitContact() {
 
-
  var data = {
    'fields': [
      {'name': 'firstname',
@@ -33,7 +32,7 @@ function submitContact() {
        // ]
      }
    },
-   'skipValidation': true,
+   'skipValidation': false,
 
  }; 
 
@@ -45,7 +44,8 @@ function submitContact() {
 
 $.post('https://api.hsforms.com/submissions/v3/integration/submit/8915946/7c640b86-0464-4120-80c5-d2752203bdea', data)
  .then(function (response) {
-   console.log(response);
+   console.log(response)
+   ;
  }) 
 
 }
