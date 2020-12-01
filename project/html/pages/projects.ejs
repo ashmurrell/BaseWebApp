@@ -4,26 +4,33 @@
 </head>
 
 <body>
-
   <!-- the classes 'page-header' and 'btn btn-default' create bootstrap components.  -->
   <!-- Check out more components here: http://getbootstrap.com/components/ -->
   <div class="page-header">
-
     <% include ../helpers/navbar %>
-
-    <h1>Projects</h1>
+    <h1>Hubspot Embedded Form Example</h1>
   </div>
 
-  <input class="search" type="text" placeholder="Enter city name">
 
-  <button type="button" onClick="searchWeather()">Search</button>
 
-  <div class="error-message"></div>
+<div>
+  <p>
+<!--[if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif]-->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+<script>
+  hbspt.forms.create({
+	portalId: "8915946",
+	formId: "7c640b86-0464-4120-80c5-d2752203bdea"
+});
+</script>
+</p>
+</div>
 
-  <div class= "city"></div>
-
-  <div class="temp"></div>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/8915946.js"></script>
+  <!-- End of HubSpot Embed Code -->
 
 </body>
-
 </html>
