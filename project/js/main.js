@@ -2,17 +2,17 @@ function handleFormSubmit(){
 
 var contactData =
 
-    { firstname: $("#first-name").val(),
-    lastname: $("#last-name").val(),
-    email: $("#email").val()
+    { firstName: $("#first-name").val(),
+    lastName: $("#last-name").val(),
+    Email: $("#email").val()
     };
-    console.log(firstname);
-    console.log(lastname);
-    console.log(email);
+    console.log(firstName);
+    console.log(lastName);
+    console.log(Email);
 
   JSON.stringify(contactData);
-  
-  submitContact(firstName,lastName,email);
+
+  submitContact(firstName,lastName,Email);
 }
 
 
@@ -27,15 +27,15 @@ function submitContact(contactData){
     "fields": [
       {
         "name": "email",
-        "value": email
+        "value": Email
       },
       {
         "name": "firstname",
-        "value": firstname
+        "value": firstName
       },
       {
         "name": "lastname",
-        "value": lastname
+        "value": lastName
       }
     ],
     "context": {
