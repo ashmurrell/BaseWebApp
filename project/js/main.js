@@ -1,51 +1,59 @@
-//$(document).ready(function(){
-//  $('#contactform').submit(function (e, data) {
-   //   console.clear();
-  //    e.preventDefault();
- //     submitContact();
-//  });
-//});
-
 function submitContact() {
 
+  //clear validation message
+  document.getElementById("validationmessagebox").innerHTML = ("");
+
+  //prepare data for POST 
  var data = {
    'fields': [
      {'name': 'firstname',
      'value': $("#first-name").val()},
-     //'value': "John"},
      {'name': 'lastname',
      'value': $("#last-name").val()},
-     //'value': "Tester"},
      {'name': 'email',
      'value': $("#email").val()},
-     //'value': "ash.e.murrell@gmail.com"}
+     {'name': 'company',
+    'value': $("#company").val()}
    ],
+
+   "context": {
+    //"hutk": ':hutk'
+    "pageUri": "www.Able.com/landingpage",
+    "pageName": "Landingpage"
+  },
+
    "legalConsentOptions": {
-     "consent": { // Include this object when GDPR options are enabled
+     "consent": {
        "consentToProcess": true,
        "text": "I agree to allow Able to store and process my personal data.",
-       // "communications": [
-       //   {
-       //     "value": true,
-       //     "text": "I agree to receive marketing communications from Example Company."
-       //   }
-       // ]
      }
    },
-   'skipValidation': false,
 
+   'skipValidation': false,
  }; 
 
- data = JSON.stringify(data)
+ //prepare data array for AJAX call
+data = JSON.stringify(data)
 
- $.ajaxSetup({
-  contentType: 'application/json'
-});
+//the form we want to connect with
+var url= "https://api.hsforms.com/submissions/v3/integration/submit/8915946/7c640b86-0464-4120-80c5-d2752203bdea"
 
-$.post('https://api.hsforms.com/submissions/v3/integration/submit/8915946/7c640b86-0464-4120-80c5-d2752203bdea', data)
- .then(function (response) {
-   console.log(response)
-   ;
- }) 
 
+$.ajax(url, {
+    type: 'POST', //http method
+    contentType: 'application/json', //sent as JSON
+    data,  // data to submit
+    success: function (data, status, response) {
+        console.log(status);
+        console.log(data);
+        console.log(response)
+        document.getElementById("validationmessagebox").innerHTML = ("Thanks for submitting the form! A member of our team will be in touch after the event.");
+    },
+    error: function (data, status, errors) {
+            console.log(status)
+            console.log(data)
+            console.log(errors)
+            document.getElementById("validationmessagebox").innerHTML = ("There was a problem with your details, please check your email and try again.");
+    }
+})
 }
