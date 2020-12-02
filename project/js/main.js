@@ -48,7 +48,7 @@ $.ajax(url, {
         console.log(data);
         console.log(response)
         document.getElementById("validationmessagebox").innerHTML = ("Thanks for submitting your details! You will recieve an email with the eBook shortly.");
-        window.location.href = "http://www.w3schools.com";
+        window.location.href = "/thankyou.ejs";
     },
     error: function (data, status, errors) {
             console.log(status)
