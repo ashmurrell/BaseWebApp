@@ -54,7 +54,7 @@ $.ajax(url, {
             console.log(status)
             console.log(data)
             console.log(errors)
-            document.getElementById("validationmessagebox").innerHTML = ("There was a problem with your details, please check your email and try again.");
+            document.getElementById("validationmessagebox").innerHTML = ("Please check your email before submitting.");
     }
 })
 }
